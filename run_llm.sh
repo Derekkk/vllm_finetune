@@ -1,0 +1,21 @@
+CUDA_VISIBLE_DEVICES=0 accelerate launch --config_file=./accelerate_configs/deepspeed_zero3.yaml sft.py \
+    --model_name_or_path /home/huzhe/workspace/model_card/Qwen2.5-3B-Instruct \
+    --dataset_name trl-lib/Capybara \
+    --learning_rate 2.0e-4 \
+    --num_train_epochs 1 \
+    --packing false\
+    --per_device_train_batch_size 4 \
+    --gradient_accumulation_steps 8 \
+    --gradient_checkpointing \
+    --logging_steps 25 \
+    --eval_strategy steps \
+    --num_train_epochs 3 \
+    --eval_steps 100 \
+    --save_steps 100 \
+    --use_peft false \
+    --lora_r 32 \
+    --lora_alpha 16 \
+    --lora_target_modules q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj \
+    --output_dir ./save_model/llms/GPT4o_v2_10kdata_Qwen2.5-3B-Instruct_reason \
+    --bf16 \
+    --torch_dtype bfloat16

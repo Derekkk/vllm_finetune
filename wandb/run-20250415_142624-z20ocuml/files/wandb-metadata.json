@@ -1,0 +1,90 @@
+{
+  "os": "Linux-6.8.0-56-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.11.5",
+  "startedAt": "2025-04-15T06:26:24.977972Z",
+  "args": [
+    "--model_name_or_path",
+    "/home/huzhe/workspace/model_card/Qwen2.5-3B-Instruct",
+    "--dataset_name",
+    "trl-lib/Capybara",
+    "--learning_rate",
+    "2.0e-4",
+    "--num_train_epochs",
+    "1",
+    "--packing",
+    "false",
+    "--per_device_train_batch_size",
+    "4",
+    "--gradient_accumulation_steps",
+    "8",
+    "--gradient_checkpointing",
+    "--logging_steps",
+    "25",
+    "--eval_strategy",
+    "steps",
+    "--num_train_epochs",
+    "3",
+    "--eval_steps",
+    "100",
+    "--save_steps",
+    "100",
+    "--use_peft",
+    "false",
+    "--lora_r",
+    "32",
+    "--lora_alpha",
+    "16",
+    "--lora_target_modules",
+    "q_proj,",
+    "k_proj,",
+    "v_proj,",
+    "o_proj,",
+    "gate_proj,",
+    "up_proj,",
+    "down_proj",
+    "--output_dir",
+    "./save_model/llms/GPT4o_v2_10kdata_Qwen2.5-3B-Instruct_reason",
+    "--bf16",
+    "--torch_dtype",
+    "bfloat16"
+  ],
+  "program": "/home/huzhe/workspace/trl/finetune_vlms/sft.py",
+  "codePath": "sft.py",
+  "email": "zhehu.94@gmail.com",
+  "root": "/home/huzhe/workspace/trl/finetune_vlms",
+  "host": "super",
+  "executable": "/home/huzhe/env/conda/anaconda3/bin/python",
+  "codePathLocal": "sft.py",
+  "cpu_count": 96,
+  "cpu_count_logical": 192,
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "gpu_count": 2,
+  "disk": {
+    "/": {
+      "total": "1888559353856",
+      "used": "701854228480"
+    }
+  },
+  "memory": {
+    "total": "405333323776"
+  },
+  "cpu": {
+    "count": 96,
+    "countLogical": 192
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA A100-SXM4-80GB",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA A100-SXM4-80GB",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    }
+  ],
+  "cudaVersion": "12.7"
+}

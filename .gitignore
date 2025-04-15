@@ -1,0 +1,13 @@
+.env
+.env.local
+config.local.js
+
+*.log
+logs/
+
+save_model/
+
+results/
+
+data/
+
